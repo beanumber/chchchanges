@@ -1,7 +1,7 @@
 # chchchanges
 It's the chchchanges package!
 
-##Developers
+## Developers
 
 - [Nicole Sanchez Flores](https://github.com/NicoleSanchezFlores)
 - [Debora Camacho](https://github.com/dmcam02)
