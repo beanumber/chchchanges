@@ -2,8 +2,8 @@ Package: chchchanges
 Title: Displays highlighted changes between documents
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Nicole", "Sanchez Flores", , "nsanchezflores@smith.edu", role = c("aut"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Nicole", "Sanchez Flores", , "nsanchezflores@smith.edu", role = c("aut","cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID")),
     person("Debora", "Camacho", , "dcamacho@smith.edu", role = c("aut"),
            comment = c(ORCID = "YOUR-ORCID-ID")))
 Description: What the package does (one paragraph).
