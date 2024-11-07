@@ -1,0 +1,10 @@
+---
+title: "Comments from Prof"
+format: html
+---
+
+Note that there is already the highlightr package. Perhaps you can find a way to combine this with the git history using the git2r package?
+
+I'm wondering if you can apply the concepts of highlightr to source code, using the git history as "notes", as described here.
+
+Please use this repository and get started!
