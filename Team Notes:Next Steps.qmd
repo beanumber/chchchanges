@@ -1,0 +1,37 @@
+---
+title: "Next Steps?"
+format: html
+---
+
+Description:
+This is a document to see what each member has done, so we can see what are our next steps. 
+
+## Nov 9
+
+Nicole went to a meeting wit Professor Baumer so we can describe our next steps. One thing that Prof. Baumer suggested is to make summary table 
+
+We first looked at blame in the git2r package
+```{r}
+library(git2r)
+blame(path="README.md")
+
+#then we saved it to x
+blame(path="README.md") -> x
+#then find the class
+class(x) # we did this so we it is, and it is git_blame
+str(x) #this can show us the histroy of the changes/commits
+
+```
+
+Then we can try to make a summary table of each user who made a commit, and how many times they committed, this would be for each file.
+
+This summary could apply to any file in the repository, or even across the entire repo, to get a complete count of contributions and edited files by user.
+
+## Next Steps
+\begin{itemize}
+  \item Generate a summary table showing each user who contributed, the number of commits they made, and the specific files they edited.
+  \item Test it out with other Repos?
+\end{itemize}
+
+Extra notes:
+Professor Baumer said that GitHub’s  doesn’t really do a great job helping you understand of who’s responsible in your repository
