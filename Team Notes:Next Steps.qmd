@@ -2,13 +2,22 @@
 title: "Next Steps?"
 format: html
 ---
-
+### General Info
 Description:
 This is a document to see what each member has done, so we can see what are our next steps. 
 
+## Nov 4
+
+Note that there is already the highlightr package. Perhaps you can find a way to combine this with the git history using the git2r package?
+
+I'm wondering if you can apply the concepts of highlightr to source code, using the git history as "notes", as described here.
+
+Please use this repository and get started!
+
+
 ## Nov 9
 
-Nicole went to a meeting wit Professor Baumer so we can describe our next steps. One thing that Prof. Baumer suggested is to make summary table 
+Nicole went to a meeting with Baumer so we can describe our next steps. One thing that Prof. Baumer suggested is to make summary table 
 
 We first looked at blame in the git2r package
 ```{r}
@@ -28,10 +37,10 @@ Then we can try to make a summary table of each user who made a commit, and how 
 This summary could apply to any file in the repository, or even across the entire repo, to get a complete count of contributions and edited files by user.
 
 ## Next Steps
-\begin{itemize}
-  \item Generate a summary table showing each user who contributed, the number of commits they made, and the specific files they edited.
-  \item Test it out with other Repos?
-\end{itemize}
+
+Generate a summary table showing each user who contributed, the number of commits they made, and the specific files they edited.
+
+Test it out with other Repos?
 
 Extra notes:
-Professor Baumer said that GitHub’s  doesn’t really do a great job helping you understand of who’s responsible in your repository
+Professor Baumer said that GitHub’s  doesn’t really do a great job helping you understand of who’s responsible in your repository maybe we can take this into consideration of what we can do with chchchanges
