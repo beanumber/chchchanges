@@ -3,12 +3,12 @@
 #' @param users These are the users you may have from commit changes
 #' @param commits These are the number of commits
 #' @param hunk  This is the hunk of where they might have committed
-#' 
+
 #' @import git2r
 #' @export
-changes_summary_table <- function(file_name) {
+summary_table_changes <- function(file_name) {
   x <- blame(path = file_name)
-  table <- sapply(x, `[[`, "author")
+  table <- sapply(x, `[[`, "name")
   # we have to make a list?
   
   # sapply applies the function and makes it into a vector or an array, this is good bc
