@@ -8,7 +8,7 @@
 #' @export
 summary_table_changes <- function(file_name) {
   x <- blame(path = file_name)
-  table <- sapply(x, `[[`, "name")
+  
   # we have to make a list?
   
   # sapply applies the function and makes it into a vector or an array, this is good bc
@@ -18,6 +18,10 @@ summary_table_changes <- function(file_name) {
   # # basically i want the path, and then i want it to be separated into how many times it commits?
   # i don't really know how to do this, but maybe how many times the user appeared. first we have to make a data frame tho
   # as.data.frame 
-  print(table)
+  print(str(x))
+  #now let's try to organize this 
+  data
 }
+
+
 
