@@ -32,6 +32,22 @@ str(x) #this can show us the histroy of the changes/commits
 
 ```
 
+```{r}
+commits_amt <- function(file_name, repo, num_c ) {
+  
+  ##Keep a history of commits
+  # Help you open a repository 
+  repo <- git2r::repository(path = file_name ) # https://docs.ropensci.org/git2r/ 
+
+  
+  #count the amount of commits 
+  num_c <- length(git2r::commits(repo))
+  paste("The amount of commits so far is: ", num_c)
+  
+}
+```
+
+
 Then we can try to make a summary table of each user who made a commit, and how many times they committed, this would be for each file.
 
 This summary could apply to any file in the repository, or even across the entire repo, to get a complete count of contributions and edited files by user.
