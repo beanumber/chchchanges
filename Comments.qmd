@@ -8,3 +8,29 @@ Note that there is already the highlightr package. Perhaps you can find a way to
 I'm wondering if you can apply the concepts of highlightr to source code, using the git history as "notes", as described here.
 
 Please use this repository and get started!
+
+
+# Testing
+```{r}
+library(git2r)
+x <- blame(path = "README.md")
+y <- str(x)
+names <-x$hunks$names
+class(x)
+hunks<-x$hunks 
+```
+
+```{r}
+
+
+first_hunk <- hunks[[1]]
+first_hunk$final_signature$name #this is to get the name of the person
+
+extract_name <- function(hunk) {
+  return(hunk$final_signature$name)
+}
+
+lapply(hunks,extract_name)
+```
+
+
