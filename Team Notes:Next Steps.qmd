@@ -64,3 +64,10 @@ Test it out with other Repos?
 
 Extra notes:
 Professor Baumer said that GitHub’s  doesn’t really do a great job helping you understand of who’s responsible in your repository maybe we can take this into consideration of what we can do with chchchanges
+
+
+## Nov 19
+I think I'm gonna make a function that will generalize the file blame paht to a lot of filees instead of just README.md,
+-Ananda _> where the lines were made on
+- Debora _> trying to find how to find the amount of commits per file, previous functions seems to only find the number of commits for the whole repository
+-Nicole _> trying to combine this all into summary table function,
