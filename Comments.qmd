@@ -9,7 +9,6 @@ I'm wondering if you can apply the concepts of highlightr to source code, using 
 
 Please use this repository and get started!
 
-
 # Testing
 ```{r}
 library(git2r)
@@ -21,8 +20,6 @@ hunks<-x$hunks
 ```
 
 ```{r}
-
-
 first_hunk <- hunks[[1]]
 first_hunk$final_signature$name #this is to get the name of the person
 
@@ -33,4 +30,22 @@ extract_name <- function(hunk) {
 lapply(hunks,extract_name)
 ```
 
+```{r}
+
+authors_commit <- function(file_name) {
+
+#Finds the total number of commits, and than another function 'function(commit)' is applied where the author/name is extracted from the commit made by individual people.
+ repo <- git2r::repository(path = file_name ) 
+ author <- sapply(git2r::commits(repo), function(commit) commit$author$name)
+ 
+
+ #sort is to ensure that largest to smallest is displayed since the opposite is the default/ table adds them up
+ commit_summary <- sort(table(author), decreasing = TRUE)
+ 
+ return(commit_summary)
+}
+
+authors_commit("README.md")
+
+```
 
