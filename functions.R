@@ -20,3 +20,6 @@ commits_amt <- function(file_name) {
   paste("The amount of commits so far is: ", num_c)
 }
 
+hunks <-  function(file_name) { 
+  x <- blame(path = "file_name")
+  hunks<-x$hunks}

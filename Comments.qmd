@@ -17,6 +17,15 @@ y <- str(x)
 names <-x$hunks$names
 class(x)
 hunks<-x$hunks 
+
+#make a function that will generalize this maybe
+
+
+x <- blame(path = "README.md")
+y <- str(x)
+names <-x$hunks$names
+class(x)
+hunks<-x$hunks 
 ```
 
 ```{r}

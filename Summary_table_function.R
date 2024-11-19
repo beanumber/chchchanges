@@ -7,8 +7,11 @@
 #' @import git2r
 #' @export
 summary_table_changes <- function(file_name) {
-  x <- blame(path = file_name, boundary = FALSE)
-  table <- sapply(x, `[[`, "name")
+  x <- blame(path = "file_name")
+  hunks<-x$hunks 
+  Users <- lapply(hunks,extract_name)
+  
+  Data.frame <- data.frame(Users = c(Users))
   # we have to make a list?
   
   
@@ -20,10 +23,11 @@ summary_table_changes <- function(file_name) {
   # i don't really know how to do this, but maybe how many times the user appeared. first we have to make a data frame tho
   # as.data.frame 
   
-  print(table)
+  print(Data.frame)
+  #for a specific file
 }
 
 
   
-commits ---- hunks (changes of each person)
+#commits ---- hunks (changes of each person)
 
