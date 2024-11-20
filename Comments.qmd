@@ -1,5 +1,5 @@
 ---
-title: "Comments from Prof"
+title: "Comments from Prof & Testing"
 format: html
 ---
 
@@ -55,6 +55,21 @@ authors_commit <- function(file_name) {
 }
 
 authors_commit("README.md")
+
+```
+
+```{r}
+hunks <-  function(file_name) { 
+  x <- blame(path = file_name)
+  hunks<-x$hunks 
+  return(hunks)}
+
+extract_name <- function(hunk) {
+  return(hunk$final_signature$name)
+}
+
+functions.R_hunks <- hunks("functions.R")
+committer_names <- lapply(functions.R_hunks, extract_name)
 
 ```
 
