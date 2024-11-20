@@ -58,6 +58,8 @@ authors_commit("README.md")
 
 ```
 
+
+# Hunks Function
 ```{r}
 hunks <-  function(file_name) { 
   x <- blame(path = file_name)
