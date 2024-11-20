@@ -21,5 +21,6 @@ commits_amt <- function(file_name) {
 }
 
 hunks <-  function(file_name) { 
-  x <- blame(path = "file_name")
-  hunks<-x$hunks}
+  x <- blame(path = file_name)
+  hunks<-x$hunks 
+  return(hunks)}
