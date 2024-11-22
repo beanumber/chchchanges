@@ -8,7 +8,7 @@
 #' @export
 summary_table_changes <- function(file_name) {
   x <- blame(path = file_name, boundary = FALSE)
-  table <- sapply(x, `[[`, "name")
+
   # we have to make a list?
   
   

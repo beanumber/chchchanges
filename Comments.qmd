@@ -32,11 +32,15 @@ lapply(hunks,extract_name)
 
 ```{r}
 
-authors_commit <- function(file_name) {
+x <- git2r::blame(path = "README.md")
+names <-x$hunks$names
+hunks<-x$hunks 
+
+authors_commit <- function(x) {
 
 #Finds the total number of commits, and than another function 'function(commit)' is applied where the author/name is extracted from the commit made by individual people.
- repo <- git2r::repository(path = file_name ) 
- author <- sapply(git2r::commits(repo), function(commit) commit$author$name)
+ repo <- git2r::repository(path = x ) 
+ author <- sapply(git2r::commits(repo), function(commit) hunks$final_signature$name)
  
 
  #sort is to ensure that largest to smallest is displayed since the opposite is the default/ table adds them up

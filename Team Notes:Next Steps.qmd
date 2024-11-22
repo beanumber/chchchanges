@@ -47,9 +47,7 @@ commits_amt <- function(file_name) {
 }
 commits_amt(file_name = "README.md")
 ```
-```{r}
-pwd
-```
+
 
 
 Then we can try to make a summary table of each user who made a commit, and how many times they committed, this would be for each file.
