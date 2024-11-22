@@ -1,5 +1,5 @@
 ---
-title: "Comments from Prof"
+title: "Comments from Prof & Testing"
 format: html
 ---
 
@@ -12,6 +12,15 @@ Please use this repository and get started!
 # Testing
 ```{r}
 library(git2r)
+x <- blame(path = "README.md")
+y <- str(x)
+names <-x$hunks$names
+class(x)
+hunks<-x$hunks 
+
+#make a function that will generalize this maybe
+
+
 x <- blame(path = "README.md")
 y <- str(x)
 names <-x$hunks$names
@@ -50,6 +59,23 @@ authors_commit <- function(x) {
 }
 
 authors_commit("README.md")
+
+```
+
+
+# Hunks Function
+```{r}
+hunks <-  function(file_name) { 
+  x <- blame(path = file_name)
+  hunks<-x$hunks 
+  return(hunks)}
+
+extract_name <- function(hunk) {
+  return(hunk$final_signature$name)
+}
+
+functions.R_hunks <- hunks("functions.R")
+committer_names <- lapply(functions.R_hunks, extract_name)
 
 ```
 
