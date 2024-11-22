@@ -7,6 +7,8 @@
 #' @import git2r
 #' @export
 summary_table_changes <- function(file_name) {
+  x <- blame(path = file_name, boundary = FALSE)
+
   x <- blame(path = "file_name")
   hunks<-x$hunks 
   Users <- lapply(hunks,extract_name)
