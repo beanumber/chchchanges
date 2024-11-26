@@ -77,7 +77,6 @@ hunks(file_name = "Comments.qmd")
 
 ```
 
-
 ```{r}
 #library(tidyverse)
 
@@ -105,4 +104,5 @@ return(hunk_time)
 
 time(file_name = "Comments.qmd")
 ```
+
 

@@ -5,7 +5,10 @@ Authors@R: c(
     person("Nicole", "Sanchez Flores", , "nsanchezflores@smith.edu", role = c("aut","cre"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
     person("Debora", "Camacho", , "dcamacho@smith.edu", role = c("aut"),
-           comment = c(ORCID = "YOUR-ORCID-ID")))
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+    person("Ananda", "Wilkinson", , "awilkinson@smith.edu", role = c("aut"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+           )
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
