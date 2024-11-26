@@ -52,9 +52,13 @@ total <- length(hunk_name)
  
  return(hunk_name_table)
 }
-
+```
+```{r}
 authors_commit(file_name = "Comments.qmd")
 ```
+
+
+
 # Hunks Function
 ```{r}
 hunks <-  function(file_name) { 
@@ -75,17 +79,19 @@ hunks(file_name = "Comments.qmd")
 
 
 ```{r}
-#Test amt of commit               
+#library(tidyverse)
+
+            
 time <- function(file_name) {
   x <- blame(path = file_name)
   
  hunk_time <- x$hunks |> map(function(x) 
     x[["final_signature"]][["when"]][["time"]])
  
- date <- as.Date("2024-11-24")  # Default format is yyyy-mm-dd
+ hunk_time <- as.Date("2024-11-24")  # Default format is yyyy-mm-dd
 
 # Convert to mm-dd-yyyy
-formatted_date <- format(date, "%m-%d-%Y")
+ formatted_date <- format(hunk_time, "%m-%d-%Y")
 
 #print(formatted_date)
 # hunk_name_sort <- sort(table(hunk_name), decreasing = TRUE)
@@ -95,7 +101,6 @@ formatted_date <- format(date, "%m-%d-%Y")
 #  hunk_name_table <- data.frame(hunk_name_sort, total)
 #  
 return(hunk_time)
-return(formatted_date)
 }
 
 time(file_name = "Comments.qmd")
