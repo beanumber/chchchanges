@@ -73,7 +73,6 @@ hunks(file_name = "Comments.qmd")
 
 ```
 
-
 ```{r}
 #Test amt of commit               
 time <- function(file_name) {
@@ -100,4 +99,5 @@ return(formatted_date)
 
 time(file_name = "Comments.qmd")
 ```
+
 
