@@ -6,6 +6,9 @@ extract_name <- function(hunk) {
   return(hunk$final_signature$name)
 }
 
+#' @export
+#' @examples
+#' authors_commit(file_name = "Comments.qmd")
 #amount of commits per person in file 
 authors_commit <- function(file_name) {
   x <- blame(path = file_name)
@@ -15,6 +18,7 @@ authors_commit <- function(file_name) {
   hunk_name_table <- sort(table(hunk_name), decreasing = TRUE)
   return(hunk_name_table)
 }
+
 
 hunks <-  function(file_name) { 
   x <- blame(path = file_name)
