@@ -19,8 +19,6 @@ class(x)
 hunks<-x$hunks 
 
 #make a function that will generalize this maybe
-
-
 x <- blame(path = "README.md")
 y <- str(x)
 names <-x$hunks$names
@@ -40,29 +38,23 @@ lapply(hunks,extract_name)
 ```
 
 ```{r}
-
-x <- git2r::blame(path = "README.md")
-names <-x$hunks$names
-hunks<-x$hunks 
-
-authors_commit <- function(x) {
-
-#Finds the total number of commits, and than another function 'function(commit)' is applied where the author/name is extracted from the commit made by individual people.
- repo <- git2r::repository(path = x ) 
- author <- sapply(git2r::commits(repo), function(commit) hunks$final_signature$name)
+#Test amt of commit               
+authors_commit <- function(file_name) {
+  x <- blame(path = file_name)
+ hunk_name <- x$hunks |> map_chr(function(x) 
+    x[["final_signature"]][["name"]])
  
-
- #sort is to ensure that largest to smallest is displayed since the opposite is the default/ table adds them up
- commit_summary <- sort(table(author), decreasing = TRUE)
+ hunk_name_sort <- sort(table(hunk_name), decreasing = TRUE)
  
- return(commit_summary)
+total <- length(hunk_name)
+ 
+ hunk_name_table <- data.frame(hunk_name_sort, total)
+ 
+ return(hunk_name_table)
 }
 
-authors_commit("README.md")
-
+authors_commit(file_name = "Comments.qmd")
 ```
-
-
 # Hunks Function
 ```{r}
 hunks <-  function(file_name) { 
@@ -77,5 +69,35 @@ extract_name <- function(hunk) {
 functions.R_hunks <- hunks("functions.R")
 committer_names <- lapply(functions.R_hunks, extract_name)
 
+hunks(file_name = "Comments.qmd")
+
+```
+
+
+```{r}
+#Test amt of commit               
+time <- function(file_name) {
+  x <- blame(path = file_name)
+  
+ hunk_time <- x$hunks |> map(function(x) 
+    x[["final_signature"]][["when"]][["time"]])
+ 
+ date <- as.Date("2024-11-24")  # Default format is yyyy-mm-dd
+
+# Convert to mm-dd-yyyy
+formatted_date <- format(date, "%m-%d-%Y")
+
+#print(formatted_date)
+# hunk_name_sort <- sort(table(hunk_name), decreasing = TRUE)
+#  
+# total <- length(hunk_name)
+#  
+#  hunk_name_table <- data.frame(hunk_name_sort, total)
+#  
+return(hunk_time)
+return(formatted_date)
+}
+
+time(file_name = "Comments.qmd")
 ```
 

@@ -5,6 +5,7 @@
 #' @param hunk  This is the hunk of where they might have committed
 
 #' @import git2r
+#' @import tidyverse
 #' @export
 summary_table_changes <- function(file_name) {
   x <- blame(path = file_name, boundary = FALSE)
