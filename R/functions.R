@@ -13,7 +13,7 @@ extract_name <- function(hunk) {
 authors_commit <- function(file_name) {
   x <- blame(path = file_name)
   hunk_name <- x$hunks |> map_chr(function(x) 
-    x[["org_signature"]][["name"]])
+    x[["orig_signature"]][["name"]])
   total <- length(hunk_name)
   hunk_name_table <- sort(table(hunk_name), decreasing = TRUE)
   return(hunk_name_table)
@@ -34,6 +34,7 @@ hunks <-  function(file_name) {
 #' @examples 
 #' commit_lines("README.md")
 
+
 library(git2r)
 
 get_all_commit_shas <- function(repo_path = getwd()) {
@@ -43,13 +44,20 @@ get_all_commit_shas <- function(repo_path = getwd()) {
   # Get the list of all commits
   all_commits <- commits(repo)
   
-  # Extract SHAs from all commits
-  sha_list <- sapply(all_commits, function(commit) commit$sha)
+  # Extract SHAs and authors from all commits
+  sha_author_list <- lapply(all_commits, function(commit) {
+    list(
+      author = commit$author$name,
+      sha = commit$sha
+   )
+    })
   
-  # Return the list of SHAs
-  return(sha_list)
+  # Convert the list into a data frame for better readability
+  sha_author_df <- do.call(rbind, lapply(sha_author_list, as.data.frame))
+  
+  # Return the data frame of SHAs and authors
+  return(sha_author_df)
 }
-get_all_commit_shas()
 
 
 
