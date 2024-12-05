@@ -16,45 +16,7 @@ hunks <-  function(file_name) {
   hunks<-x$hunks 
   return(hunks)}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #' @export
-<<<<<<< HEAD
 #' @examples
 #' check_file(file_name = "Comments.qmd")
 #Checks if file exist and is empty
@@ -89,7 +51,7 @@ authors_commit <- function(file_name) {
   hunk_name_table <- sort(table(hunk_name), decreasing = TRUE)
   return(hunk_name_table)
 }
-=======
+
 #' @examples 
 #' commit_lines("README.md")
 
@@ -109,7 +71,3 @@ get_all_commit_shas <- function(repo_path = getwd()) {
   return(sha_list)
 }
 get_all_commit_shas()
-
-
->>>>>>> 16e6383d269885e8cfcc99b0861a832c2b257144
-
