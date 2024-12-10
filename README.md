@@ -1,4 +1,4 @@
-#chchchanges <img src='chchchanges_hex_sticker.png' align="right" height="139"/>
+<img src='data-raw/chchchanges_hex_sticker.png' align="right" height="139"/>
 
 ## Overview
 
