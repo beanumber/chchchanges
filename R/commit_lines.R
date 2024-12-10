@@ -18,12 +18,20 @@ get_all_commit_shas <- function(repo_path = getwd()) {
   sha_author_list <- lapply(all_commits, function(commit) {
     list(
       author = commit$author$name,
-      sha = commit$sha
+      sha = commit$sha,
+      message = commit$message
     )
   })
   
   sha_author_df <- do.call(rbind, lapply(sha_author_list, as.data.frame))
-  
   return(sha_author_df)
   
 }
+
+commits_table <- get_all_commit_shas()
+library(knitr)
+commits_table |>
+  kable(format = "pipe", align = "l")
+
+View(commits_table)
+
