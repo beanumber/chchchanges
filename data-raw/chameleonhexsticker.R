@@ -2,7 +2,7 @@ library(hexSticker)
 library(magick)
 
 # Check and set the working directory if necessary
-setwd("/Users/nicolesanchezflores/Documents/chchchanges") # Adjust this path as needed
+setwd("/Users/nicolesanchezflores/Documents/chchchanges/data-raw") # Adjust this path as needed
 
 # Read the uploaded image
 cham.img <- magick::image_read("chameleon.png")
