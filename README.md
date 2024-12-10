@@ -1,4 +1,4 @@
-# chchchanges R Package
+#chchchanges <img src='chchchanges_hex_sticker.png' align="right" height="139"/>
 
 ## Overview
 
