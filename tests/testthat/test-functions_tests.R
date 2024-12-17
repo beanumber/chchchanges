@@ -48,3 +48,5 @@ test_that("extract_name function works", {
   # Or if the file path is non_existent
   expect_error(extract_name("non_existent_file.R"), "Not a valid file path: file_name must be a valid path to an existing file.", fixed = TRUE)
 })
+
+#change
