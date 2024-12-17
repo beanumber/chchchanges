@@ -42,9 +42,10 @@ hunks(file_name = "functions.R")
 Retrieves the authors GitHub username along with commit id in order from most last to recent
 
 ```{r}
-get_all_commit_shas (repo_path = "functions.R")
-```
+get_all_commit_shas <- function(repo_path = getwd())
+<img width="837" alt="commits_table" src="https://github.com/user-attachments/assets/1e1629c9-5ce6-4708-8d9e-add315bc4d9c" />
 
+```
 ### Example 4
 
 Check to see if the file exist and then empty 
