@@ -59,7 +59,7 @@ extract_name(hunk = "functions.R")
 
 Summary of the information above
 ```{r}
-!!!create_summary_table(file_name, repo_path = getwd())
+create_summary_table(file_name, repo_path = getwd())
 ```
 
 ## Developers

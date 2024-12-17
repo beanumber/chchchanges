@@ -12,4 +12,3 @@ extract_name <- function(hunk) {
   return(x$hunk$final_signature$name)
 }
 
-# Need to fix
