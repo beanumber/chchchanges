@@ -1,5 +1,9 @@
 <img src='data-raw/chchchanges_hex_sticker.png' align="right" height="139"/>
 
+ <!-- badges: start -->
+  [![R-CMD-check](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml)
+  <!-- badges: end -->
+
 ## Overview
 
 The purpose of this package is to breakdown the commits history between multiple users working on a git repository on R-Studio. This will allow a friendlier preview of who, where and when commits are made.
