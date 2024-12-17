@@ -18,7 +18,8 @@ Imports:
     git2r,
     tidyverse,
     purrr,
-    knitr
+    knitr,
+    mockery
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

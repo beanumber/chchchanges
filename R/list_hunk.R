@@ -1,5 +1,7 @@
+#'@title Getting Hunks from a File
+#'@name hunks
 #'@param file_name a file in the git repository
-#'@author Nicole Flores Sanchez
+#'@author Nicole Sanchez Flores
 #'@examples
 #'hunks(file_name = "list_hunk.R")
 #'@returns A list of hunks, the commit history
