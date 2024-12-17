@@ -1,3 +1,5 @@
+#'@title Check File Existence
+#'@name check_file
 #'@param file_name a file in the git repository
 #'@author Debora Camacho
 #'@examples
