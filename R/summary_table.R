@@ -31,3 +31,4 @@ create_summary_table <- function(file_name, repo_path = getwd()) {
   
   return(summary_table)
 }
+
