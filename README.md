@@ -43,8 +43,8 @@ Retrieves the authors GitHub username along with commit id in order from most la
 
 ```{r}
 get_all_commit_shas (repo_path = "functions.R")
+<img width="837" alt="Screenshot 2024-12-17 at 2 50 01 PM" src="https://github.com/user-attachments/assets/9f15cab6-8f96-44d4-abdb-8380fead5c5e" />
 ```
-
 ### Example 4
 
 Check to see if the file exist and then empty 
