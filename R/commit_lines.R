@@ -31,7 +31,6 @@ get_all_commit_shas <- function(repo_path = getwd()) {
   sha_author_df <- do.call(rbind, sha_author_list)
   return(sha_author_df)
 }
-commits_table
 
 library(knitr)
 commits_table <- get_all_commit_shas()
