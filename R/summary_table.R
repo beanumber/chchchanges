@@ -12,20 +12,16 @@ create_summary_table <- function(file_name, repo_path = getwd()) {
   
   #Checking the file
   file_check <- check_file (file_name)
-  # if (!is.null(file_check)) {
-  #   stop(file_check)
-  # }
+   if (!is.null(file_check)) {
+     stop(file_check)
+   }
   
-  #Names from hunks
   hunk_data <- hunks(file_name)
   
-  #Authors info
   author_commit_info <- authors_commit(file_name)
   
-  #commit lines
   commit_shas <- get_all_commit_shas(repo_path)
   
-  #table
   summary_table <- tibble(
     Author = names(author_commit_info),
     Commit_Count = as.integer(author_commit_info),
@@ -33,6 +29,5 @@ create_summary_table <- function(file_name, repo_path = getwd()) {
     All_Commits_SHA = paste(commit_shas, collapse = ", ")
   )
   
-  # Return the summary table
   return(summary_table)
 }
