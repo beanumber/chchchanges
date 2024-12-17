@@ -1,8 +1,8 @@
 <img src='data-raw/chchchanges_hex_sticker.png' align="right" height="139"/>
 
- <!-- badges: start -->
+<!-- badges: start -->
   [![R-CMD-check](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml)
-  <!-- badges: end -->
+<!-- badges: end -->
 
 ## Overview
 
