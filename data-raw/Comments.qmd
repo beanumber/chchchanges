@@ -1,0 +1,107 @@
+---
+title: "Comments from Prof & Testing"
+format: html
+---
+
+Note that there is already the highlightr package. Perhaps you can find a way to combine this with the git history using the git2r package?
+
+I'm wondering if you can apply the concepts of highlightr to source code, using the git history as "notes", as described here.
+
+Please use this repository and get started!
+
+# Testing
+```{r}
+library(git2r)
+x <- blame(path = "README.md")
+y <- str(x)
+names <-x$hunks$names
+class(x)
+hunks<-x$hunks 
+
+#make a function that will generalize this maybe
+x <- blame(path = "README.md")
+y <- str(x)
+names <-x$hunks$names
+class(x)
+hunks<-x$hunks 
+```
+
+```{r}
+first_hunk <- hunks[[1]]
+first_hunk$final_signature$name #this is to get the name of the person
+
+extract_name <- function(hunk) {
+  return(hunk$final_signature$name)
+}
+
+lapply(hunks,extract_name)
+```
+
+```{r}
+#Test amt of commit               
+authors_commit <- function(file_name) {
+  x <- blame(path = file_name)
+ hunk_name <- x$hunks |> map_chr(function(x) 
+    x[["final_signature"]][["name"]])
+ 
+ hunk_name_sort <- sort(table(hunk_name), decreasing = TRUE)
+ 
+total <- length(hunk_name)
+ 
+ hunk_name_table <- data.frame(hunk_name_sort, total)
+ 
+ return(hunk_name_table)
+}
+```
+```{r}
+authors_commit(file_name = "Comments.qmd")
+```
+
+
+
+# Hunks Function
+```{r}
+hunks <-  function(file_name) { 
+  x <- blame(path = file_name)
+  hunks<-x$hunks 
+  return(hunks)}
+
+extract_name <- function(hunk) {
+  return(hunk$final_signature$name)
+}
+
+functions.R_hunks <- hunks("functions.R")
+committer_names <- lapply(functions.R_hunks, extract_name)
+
+hunks(file_name = "Comments.qmd")
+
+```
+
+```{r}
+#library(tidyverse)
+
+            
+time <- function(file_name) {
+  x <- blame(path = file_name)
+  
+ hunk_time <- x$hunks |> map(function(x) 
+    x[["final_signature"]][["when"]][["time"]])
+ 
+ hunk_time <- as.Date("2024-11-24")  # Default format is yyyy-mm-dd
+
+# Convert to mm-dd-yyyy
+ formatted_date <- format(hunk_time, "%m-%d-%Y")
+
+#print(formatted_date)
+# hunk_name_sort <- sort(table(hunk_name), decreasing = TRUE)
+#  
+# total <- length(hunk_name)
+#  
+#  hunk_name_table <- data.frame(hunk_name_sort, total)
+#  
+return(hunk_time)
+}
+
+time(file_name = "Comments.qmd")
+```
+
