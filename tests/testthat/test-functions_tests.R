@@ -40,11 +40,13 @@ test_that("extract_name function works", {
   
   # these tests ensure that the function will raise errors when given invalid inputs:
   # NULL input
-  expect_error(extract_name(NULL), "Invalid file path", fixed = TRUE)
+  expect_error(extract_name(NULL), "Not a valid file path: file_name must be a valid path to an existing file.", fixed = TRUE)
   
   # if there's an invalid data type (such as list)
-  expect_error(extract_name(list()), "Invalid file path", fixed = TRUE)
+  expect_error(extract_name(list()), "Not a valid file path: file_name must be a valid path to an existing file.", fixed = TRUE)
   
   # Or if the file path is non_existent
-  expect_error(extract_name("non_existent_file.R"), "Invalid file path", fixed = TRUE)
+  expect_error(extract_name("non_existent_file.R"), "Not a valid file path: file_name must be a valid path to an existing file.", fixed = TRUE)
 })
+
+#change
