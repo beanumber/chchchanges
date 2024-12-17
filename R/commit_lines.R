@@ -14,28 +14,27 @@
 
 
 get_all_commit_shas <- function(repo_path = getwd()) {
-  # Open the repository at the specified path (default: current working directory)
+  library(git2r)
+  library(knitr)
+  # Open repo 
   repo <- git2r::repository(repo_path)
-  
   # Get the list of all commits
   all_commits <- git2r::commits(repo)
-  
+  # Put in a data frame
   sha_author_list <- lapply(all_commits, function(commit) {
     list(
       author = commit$author$name,
       sha = commit$sha,
-      message = commit$message
-    )
-  })
-  
-  sha_author_df <- do.call(rbind, lapply(sha_author_list, as.data.frame))
+      message = commit$message)
+    })
+  # Combine the list into a single data frame
+  sha_author_df <- do.call(rbind, sha_author_list)
   return(sha_author_df)
-  
 }
+commits_table
 
-commits_table <- get_all_commit_shas()
 library(knitr)
-commits_table |>
-  kable(format = "pipe", align = "l")
-View (commits_table)
+commits_table <- get_all_commit_shas()
+kable(commits_table, format = "simple", align = "l", col.names = c("Author", "SHA", "Message"))
 
+View(commits_table)
