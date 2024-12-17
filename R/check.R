@@ -11,7 +11,7 @@
 check_file <- function (file_name) {
   
   if (file.exists(file_name)) {
-    invisible()
+    return(invisible())
   } else {
     return("This file does not exist")
   }
@@ -19,6 +19,6 @@ check_file <- function (file_name) {
   if (file.info(file_name)$size == 0) {
     return("This is empty")
   } else {
-    invisible() # No result will come out
+    return(invisible()) 
   }
 }

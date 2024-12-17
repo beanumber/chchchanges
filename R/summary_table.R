@@ -29,5 +29,6 @@ create_summary_table <- function(file_name, repo_path = getwd()) {
     All_Commits_SHA = paste(commit_shas, collapse = ", ")
   )
   
-  return(summary_table)
+  #return(summary_table)
+  view(summary_table)
 }

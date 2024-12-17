@@ -7,8 +7,15 @@
 #'@import tidyverse
 #'@export
 #'
-extract_name <- function(hunk) {
+extract_name <- function(file_name) {
+  x <- git2r::blame(path = file_name)
+  name_list <- x$hunks |> purrr::map_chr(function(x)
+    x[["orig_signature"]][["name"]])
   
-  return(x$hunk$final_signature$name)
-}
+  final_name_list <- unique(name_list)
+  
+  return(final_name_list)
+  
+  }
+
 

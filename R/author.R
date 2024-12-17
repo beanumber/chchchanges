@@ -4,9 +4,10 @@
 #'authors_commit(file_name = "author.R")
 #'@returns a data frame with the total amount of commits per user
 #'@import git2r
+#'@import tidyverse
 #'@import purrr
 #'@export
-#' 
+#'
 authors_commit <- function(file_name) {
   
   x <- git2r::blame(path = file_name)
