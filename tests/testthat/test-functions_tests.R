@@ -38,15 +38,19 @@ test_that("extract_name function works", {
   # We're testing that the function extracts unique names correctly
   expect_equal(extract_name("mock_file"), c("John Doe", "Jane Smith"))
   
-  # these tests ensure that the function will raise errors when given invalid inputs:
+  # These tests ensure that the function will raise errors when given invalid inputs:
   # NULL input
   expect_error(extract_name(NULL), "Not a valid file path: file_name must be a valid path to an existing file.", fixed = TRUE)
   
-  # if there's an invalid data type (such as list)
+  # If there's an invalid data type (such as list)
   expect_error(extract_name(list()), "Not a valid file path: file_name must be a valid path to an existing file.", fixed = TRUE)
   
   # Or if the file path is non_existent
   expect_error(extract_name("non_existent_file.R"), "Not a valid file path: file_name must be a valid path to an existing file.", fixed = TRUE)
 })
 
-#change
+test_that("git-related function works", {
+  skip_if(!git2r::in_repository(getwd()), "Not in a Git repository")
+  # Test logic here
+})
+
