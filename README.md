@@ -1,8 +1,8 @@
 <img src='data-raw/chchchanges_hex_sticker.png' align="right" height="139"/>
 
-<!-- badges: start -->
-  [![R-CMD-check](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
+![R-CMD-check](https://github.com/sds270-f24/chchchanges/workflows/R-CMD-check/badge.svg)
+![lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
+![CRAN Not Published](https://img.shields.io/badge/CRAN%20Not%20Published-red.svg)
 
 ## Overview
 
@@ -17,7 +17,7 @@ You can install the development version of wnbaplayeRs from [GitHub](https://git
 devtools::install_github("sds270-f24/chchchanges")
 ```
 
-## Example
+## Examples
 
 There are different functions that can be called depending on the users needs
 
@@ -26,16 +26,18 @@ There are different functions that can be called depending on the users needs
 Count the amount of commits from each user
 
 ```{r}
-authors_commit(file_name = "functions.R")
+authors_commit(file_name = "README.md")
 ```
+![Author Commit](author.png)
 
 ### Example 2
 
 List the hunks within the repository
 
 ```{r}
-hunks(file_name = "functions.R")
+hunks(file_name = "README.md")
 ```
+![Hunks](hunk.png)
 
 ### Example 3
 
@@ -52,14 +54,17 @@ Check to see if the file exist and then empty
 
 ```{r}
 check_file(file_name = "functions.R")
-
 ```
+![Exist](check.png)
+
+![Non-existent](check2.png)
 
 Extracts the names from each hunk
 
 ```{r}
 extract_name(hunk = "functions.R")
 ```
+![Extracted Names](extract.png)
 
 ### Example 4
 
