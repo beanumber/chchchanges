@@ -7,16 +7,16 @@
 extract_name(file_name)
 }
 \arguments{
-\item{hunk}{a list of the commit history from a specific file}
+\item{file_name}{A string containing the path to a file tracked in a Git repository.}
 }
 \value{
-a list of the usernames will appear
+A character vector of unique usernames from the file's commit history.
 }
 \description{
 Extracting Hunk Names
 }
 \examples{
-extract_name(hunk = "hunk_name.R")
+extract_name(file_name = "hunk_name.R")
 }
 \author{
 Nicole Flores Sanchez
