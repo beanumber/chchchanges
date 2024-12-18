@@ -28,7 +28,7 @@ Count the amount of commits from each user
 ```{r}
 authors_commit(file_name = "README.md")
 ```
-![Author Commit](author.png)
+![Author Commit](man/images/author.png)
 
 ### Example 2
 
@@ -37,7 +37,7 @@ List the hunks within the repository
 ```{r}
 hunks(file_name = "README.md")
 ```
-![Hunks](hunk.png)
+![Hunks](man/images/hunk.png)
 
 ### Example 3
 
@@ -46,7 +46,7 @@ Retrieves the authors GitHub username along with commit id in order from most la
 ```{r}
 get_all_commit_shas <- function(repo_path = getwd())
 ```
-![Commit](commits_table.png)
+![Commit](man/images/commits_table.png)
 
 ### Example 4
 
@@ -55,16 +55,16 @@ Check to see if the file exist and then empty
 ```{r}
 check_file(file_name = "functions.R")
 ```
-![Exist](check.png)
+![Exist](man/images/check.png)
 
-![Non-existent](check2.png)
+![Non-existent](man/images/check2.png)
 
 Extracts the names from each hunk
 
 ```{r}
 extract_name(hunk = "functions.R")
 ```
-![Extracted Names](extract.png)
+![Extracted Names](man/images/extract.png)
 
 ### Example 4
 
