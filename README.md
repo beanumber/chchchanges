@@ -1,8 +1,8 @@
 <img src='data-raw/chchchanges_hex_sticker.png' align="right" height="139"/>
 
-![R-CMD-check](https://github.com/sds270-f24/chchchanges/workflows/R-CMD-check/badge.svg)
-![lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
-![CRAN Not Published](https://img.shields.io/badge/CRAN%20Not%20Published-red.svg)
+<!-- badges: start -->
+  [![R-CMD-check](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/sds270-f24/chchchanges/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 ## Overview
 
