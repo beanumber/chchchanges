@@ -4,10 +4,9 @@
 #' @param file_name a file in the git repository
 #' @author Debora Camacho, Nicole Sanchez Flores, Ananda Wilkinson
 #' @examples
-#' create_summary_table(file_name = "summary_table.R")
+#' create_summary_table(file_name = "README.md")
 #' @returns a list of commit ids associated with each user
 #' @import git2r
-#' @import tidyverse
 #' @export
 #' 
 create_summary_table <- function(file_name, repo_path = getwd()) {
@@ -24,14 +23,11 @@ create_summary_table <- function(file_name, repo_path = getwd()) {
   
   commit_shas <- get_all_commit_shas(repo_path)
   
-  summary_table <- tibble(
-    Author = names(author_commit_info),
-    Commit_Count = as.integer(author_commit_info),
-    Total_Hunks = length(hunk_data),
-    All_Commits_SHA = paste(commit_shas, collapse = ", ")
+  tibble::tibble(
+    author = names(author_commit_info),
+    commit_count = as.integer(author_commit_info),
+    total_hunks = length(hunk_data),
+    all_commits_SHA = paste(commit_shas, collapse = ", ")
   )
-  
-  #return(summary_table)
-  view(summary_table)
 }
 

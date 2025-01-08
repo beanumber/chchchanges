@@ -16,7 +16,7 @@ a data frame with the total amount of commits per user
 Get Authors of a Commit
 }
 \examples{
-authors_commit(file_name = "author.R")
+authors_commit(file_name = "README.md")
 }
 \author{
 Debora Camacho

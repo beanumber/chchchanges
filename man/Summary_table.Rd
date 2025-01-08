@@ -19,7 +19,7 @@ a list of commit ids associated with each user
 Table Summary
 }
 \examples{
-create_summary_table(file_name = "summary_table.R")
+create_summary_table(file_name = "README.md")
 }
 \author{
 Debora Camacho, Nicole Sanchez Flores, Ananda Wilkinson

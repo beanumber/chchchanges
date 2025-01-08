@@ -4,7 +4,7 @@
 \alias{get_all_commit_shas}
 \title{Commit Changes}
 \usage{
-get_all_commit_shas(repo_path = getwd())
+get_all_commit_shas(...)
 }
 \arguments{
 \item{repo_path}{Provides the path to the repository, in this case it's our current working directory}
@@ -24,7 +24,7 @@ A summary table with the commit hashes (SHA and their corresponding authors and 
 This function allows users to find commits for each group member in their project. It helps users identify each members contribution to the project, making it easier to determine who contributed the most, the least, or if they was an equal contribution.
 }
 \examples{
-get_all_commit_shas <- function(repo_path = getwd()) 
+get_all_commit_shas()
 }
 \author{
 Ananda Wilkinson

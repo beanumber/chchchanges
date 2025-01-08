@@ -16,7 +16,7 @@ A character vector of unique usernames from the file's commit history.
 Extracting Hunk Names
 }
 \examples{
-extract_name(file_name = "hunk_name.R")
+extract_name(file_name = "README.md")
 }
 \author{
 Nicole Flores Sanchez

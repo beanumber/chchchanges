@@ -9,16 +9,13 @@
 #' @param message Represents the description of the changes made by the author
 #' @returns A summary table with the commit hashes (SHA and their corresponding authors and message. 
 #' @examples 
-#' get_all_commit_shas <- function(repo_path = getwd()) 
+#' get_all_commit_shas()
 #' @export
 
 
-get_all_commit_shas <- function(repo_path = getwd()) {
-  library(git2r)
-  library(knitr)
-  
+get_all_commit_shas <- function(...) {
   # Open repository
-  repo <- git2r::repository(repo_path)
+  repo <- git2r::repository(...)
   
   # Get the list of all commits
   all_commits <- git2r::commits(repo)
@@ -43,8 +40,3 @@ get_all_commit_shas <- function(repo_path = getwd()) {
   return(sha_author_df)
 }
 
-
-# This is an example
-library(knitr)
-commits_table <- get_all_commit_shas()
-kable(commits_table, format = "simple", align = "l", col.names = c("Author", "SHA", "Message"))

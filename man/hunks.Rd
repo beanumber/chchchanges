@@ -16,7 +16,7 @@ A list of hunks, the commit history
 Getting Hunks from a File
 }
 \examples{
-hunks(file_name = "list_hunk.R")
+hunks(file_name = "README.md")
 }
 \author{
 Nicole Sanchez Flores
