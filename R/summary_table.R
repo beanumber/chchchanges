@@ -12,9 +12,8 @@
 create_summary_table <- function(file_name, repo_path = getwd()) {
   
   #Checking the file
-  file_check <- check_file (file_name)
-   if (!is.null(file_check)) {
-     stop(file_check)
+   if (!file.exists(file_name)) {
+     stop("Could not find file")
    }
   
   hunk_data <- hunks(file_name)
