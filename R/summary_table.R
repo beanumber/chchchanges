@@ -1,10 +1,11 @@
 #' @title Table Summary
-#' @name Summary_table
-#' @param repo_path=getwd() retrieves the current working directory
+#' @param repo_path retrieves the current working directory
 #' @param file_name a file in the git repository
 #' @author Debora Camacho, Nicole Sanchez Flores, Ananda Wilkinson
 #' @examples
+#' \dontrun{
 #' create_summary_table(file_name = "README.md")
+#' }
 #' @returns a list of commit ids associated with each user
 #' @import git2r
 #' @export

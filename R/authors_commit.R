@@ -4,11 +4,11 @@
 #' @author Debora Camacho
 #' @returns a data frame with the total amount of commits per user
 #' @import git2r
-#' @import tidyverse
-#' @import purrr
 #' @export
 #' @examples
+#' \dontrun{
 #' authors_commit(file_name = "README.md")
+#' }
 
 authors_commit <- function(file_name) {
   x <- git2r::blame(repo = getwd(), path = file_name)

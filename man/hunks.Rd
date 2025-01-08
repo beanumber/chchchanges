@@ -16,7 +16,9 @@ A list of hunks, the commit history
 Getting Hunks from a File
 }
 \examples{
+\dontrun{
 hunks(file_name = "README.md")
+}
 }
 \author{
 Nicole Sanchez Flores

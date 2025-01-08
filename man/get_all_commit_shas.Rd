@@ -7,15 +7,7 @@
 get_all_commit_shas(...)
 }
 \arguments{
-\item{repo_path}{Provides the path to the repository, in this case it's our current working directory}
-
-\item{all_commits}{Provides a list of all the commits made in the file}
-
-\item{sha_author_list}{Provides a list of all the authors in the project}
-
-\item{sha}{Represents the hash code for each commit made}
-
-\item{message}{Represents the description of the changes made by the author}
+\item{...}{arguments passed to \code{\link[git2r:repository]{git2r::repository()}}}
 }
 \value{
 A summary table with the commit hashes (SHA and their corresponding authors and message.
@@ -24,7 +16,9 @@ A summary table with the commit hashes (SHA and their corresponding authors and 
 This function allows users to find commits for each group member in their project. It helps users identify each members contribution to the project, making it easier to determine who contributed the most, the least, or if they was an equal contribution.
 }
 \examples{
+\dontrun{
 get_all_commit_shas()
+}
 }
 \author{
 Ananda Wilkinson

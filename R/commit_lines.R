@@ -2,14 +2,12 @@
 #' @author Ananda Wilkinson
 #' @description 
 #' This function allows users to find commits for each group member in their project. It helps users identify each members contribution to the project, making it easier to determine who contributed the most, the least, or if they was an equal contribution. 
-#' @param repo_path Provides the path to the repository, in this case it's our current working directory
-#' @param all_commits Provides a list of all the commits made in the file 
-#' @param sha_author_list Provides a list of all the authors in the project 
-#' @param sha Represents the hash code for each commit made 
-#' @param message Represents the description of the changes made by the author
+#' @param ... arguments passed to [git2r::repository()]
 #' @returns A summary table with the commit hashes (SHA and their corresponding authors and message. 
 #' @examples 
+#' \dontrun{
 #' get_all_commit_shas()
+#' }
 #' @export
 
 

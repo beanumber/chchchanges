@@ -3,10 +3,10 @@
 #' @param file_name A string containing the path to a file tracked in a Git repository.
 #' @author Nicole Flores Sanchez
 #' @examples
+#' \dontrun{
 #' extract_name(file_name = "README.md")
+#' }
 #' @return A character vector of unique usernames from the file's commit history.
-#' @import git2r
-#' @import tidyverse
 #' @importFrom git2r blame
 #' @export
 #'

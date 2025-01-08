@@ -16,7 +16,9 @@ a data frame with the total amount of commits per user
 Get Authors of a Commit
 }
 \examples{
+\dontrun{
 authors_commit(file_name = "README.md")
+}
 }
 \author{
 Debora Camacho
