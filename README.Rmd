@@ -59,7 +59,10 @@ summarize_blame(path = "README.md")
 ### LLM
 
 ```{r llm, results='asis'}
-llm_summarize_git() |>
+llm_summarize_git(
+  show_prompts = TRUE, 
+  user_prompt = "Also assign letter grades to each contributor."
+) |>
   markdown::mark()
 ```
 

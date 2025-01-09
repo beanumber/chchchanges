@@ -4,19 +4,24 @@
 \alias{llm_summarize_git}
 \title{Use an LLM to summarize git contributions}
 \usage{
-llm_summarize_git(repo = ".", ...)
+llm_summarize_git(repo = ".", show_prompts = FALSE, user_prompt = NULL, ...)
 }
 \arguments{
 \item{repo}{path to git repository}
 
-\item{...}{currently ignored}
+\item{show_prompts}{Output the prompts as messages? Default is \code{FALSE}}
+
+\item{user_prompt}{Additional text to add to the prompt}
+
+\item{...}{arguments passed to \code{\link[ellmer:chat_gemini]{ellmer::chat_gemini()}}}
 }
 \description{
 Use an LLM to summarize git contributions
 }
 \examples{
 \dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-llm_summarize_git()
+llm_summarize_git(show_prompts = TRUE)
+llm_summarize_git(show_prompts = TRUE, user_prompt = "Respond only in Spanish.")
 
 \dontshow{\}) # examplesIf}
 }
