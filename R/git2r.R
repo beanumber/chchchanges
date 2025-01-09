@@ -16,7 +16,7 @@ tbl_commits <- function(...) {
 commit_summary <- function(gc, ...) {
   tibble::tibble(
     what = gc$sha,
-    who = gc$author$name,
+    who = gc$author$email,
     when = git2r::when(gc),
     why = gc$message
   )

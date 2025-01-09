@@ -34,31 +34,29 @@ Count the amount of commits from each user
 library(tidyverse)
 library(chchchanges)
 tbl_commits()
-#> # A tibble: 121 × 4
-#>    what                                     who                 when       why  
-#>    <chr>                                    <chr>               <chr>      <chr>
-#>  1 e7b5e664bc8f8044a2202c5fede0eda585ba2c57 beanumber           2025-01-0… "add…
-#>  2 f4ef9619dd51a18ecfc6ec8cd0296bcf2cb7a97c beanumber           2025-01-0… "tid…
-#>  3 31e4ea906fbb8606deedf4389cf45a503e4bc411 Ben Baumer          2025-01-0… "pas…
-#>  4 1ac1b460e652589384f176239dc58a4980941a21 Ben Baumer          2025-01-0… "onl…
-#>  5 52ddff48f3bccc0f6e159f200b5f72f380f4e6ff Ben Baumer          2025-01-0… "rem…
-#>  6 a3d4082c3741dc500247c1cee8b044857df6bb5c Ben Baumer          2025-01-0… "add…
-#>  7 1ea654904b3e2bfef6438c010b85e0b3908c8c10 Ben Baumer          2025-01-0… "mad…
-#>  8 d7551386912ddd37221ab87436aedc030110a4f1 GitHub              2024-12-1… "Mer…
-#>  9 e2a22bed06d0b31a03bcf64c481f301c89e67788 NicoleSanchezFlores 2024-12-1… "cha…
-#> 10 9f456f4b967901253524be4320bdc4d2978f4baa GitHub              2024-12-1… "Mer…
-#> # ℹ 111 more rows
+#> # A tibble: 122 × 4
+#>    what                                     who                      when  why  
+#>    <chr>                                    <chr>                    <chr> <chr>
+#>  1 1a18d915ea09bf94f35352b0765ae19e39f921da ben.baumer@gmail.com     2025… "sho…
+#>  2 e7b5e664bc8f8044a2202c5fede0eda585ba2c57 ben.baumer@gmail.com     2025… "add…
+#>  3 f4ef9619dd51a18ecfc6ec8cd0296bcf2cb7a97c ben.baumer@gmail.com     2025… "tid…
+#>  4 31e4ea906fbb8606deedf4389cf45a503e4bc411 ben.baumer@gmail.com     2025… "pas…
+#>  5 1ac1b460e652589384f176239dc58a4980941a21 ben.baumer@gmail.com     2025… "onl…
+#>  6 52ddff48f3bccc0f6e159f200b5f72f380f4e6ff ben.baumer@gmail.com     2025… "rem…
+#>  7 a3d4082c3741dc500247c1cee8b044857df6bb5c ben.baumer@gmail.com     2025… "add…
+#>  8 1ea654904b3e2bfef6438c010b85e0b3908c8c10 ben.baumer@gmail.com     2025… "mad…
+#>  9 d7551386912ddd37221ab87436aedc030110a4f1 noreply@github.com       2024… "Mer…
+#> 10 e2a22bed06d0b31a03bcf64c481f301c89e67788 nsanchezflores@smith.edu 2024… "cha…
+#> # ℹ 112 more rows
 summarize_commits()
-#> # A tibble: 7 × 6
-#>   who              num_commits first_commit last_commit    days commits_per_week
-#>   <chr>                  <int> <chr>        <chr>         <dbl>            <dbl>
-#> 1 Ben Baumer                 5 2025-01-08 … 2025-01-08…  0.0241          1451.  
-#> 2 beanumber                  2 2025-01-09 … 2025-01-09…  0.0377           371.  
-#> 3 GitHub                    46 2024-11-05 … 2024-12-18… 42.3                7.61
-#> 4 dmcam02                   35 2024-11-07 … 2024-12-18… 40.4                6.07
-#> 5 anandaw2                   5 2024-12-10 … 2024-12-18…  7.80               4.49
-#> 6 NicoleSanchezFl…          22 2024-11-07 … 2024-12-18… 40.5                3.80
-#> 7 Ananda Wilkinson           6 2024-11-19 … 2024-12-05… 16.0                2.62
+#> # A tibble: 5 × 6
+#>   who               num_commits first_commit last_commit   days commits_per_week
+#>   <chr>                   <int> <chr>        <chr>        <dbl>            <dbl>
+#> 1 ben.baumer@gmail…           8 2025-01-08 … 2025-01-09…  0.787            71.2 
+#> 2 dcamacho@smith.e…          35 2024-11-07 … 2024-12-18… 40.4               6.07
+#> 3 113189870+ananda…           5 2024-12-10 … 2024-12-18…  7.80              4.49
+#> 4 nsanchezflores@s…          22 2024-11-07 … 2024-12-18… 40.5               3.80
+#> 5 awilkinson@smith…           6 2024-11-19 … 2024-12-05… 16.0               2.62
 ```
 
 ### Example 2
@@ -67,7 +65,7 @@ Summarize the hunks within the repository
 
 ``` r
 tbl_blame(path = "README.md")
-#> # A tibble: 50 × 4
+#> # A tibble: 89 × 4
 #>    who        when                    how                                  lines
 #>    <chr>      <chr>                   <chr>                                <int>
 #>  1 Ben Baumer 2025-01-08 20:24:26 GMT 1ea654904b3e2bfef6438c010b85e0b3908…     3
@@ -80,12 +78,12 @@ tbl_blame(path = "README.md")
 #>  8 Ben Baumer 2025-01-08 20:24:26 GMT 1ea654904b3e2bfef6438c010b85e0b3908…     3
 #>  9 dmcam02    2024-12-10 02:40:39 GMT 4b90c1af3d8ed53d2bd8e1a4db3cbf4480f…     1
 #> 10 Ben Baumer 2025-01-08 20:24:26 GMT 1ea654904b3e2bfef6438c010b85e0b3908…     1
-#> # ℹ 40 more rows
+#> # ℹ 79 more rows
 summarize_blame(path = "README.md")
 #> # A tibble: 5 × 3
 #>   who                 num_hunks num_lines
 #>   <chr>                   <int>     <int>
-#> 1 beanumber                  19       176
+#> 1 beanumber                  58       183
 #> 2 dmcam02                    15        22
 #> 3 Ben Baumer                 12        19
 #> 4 NicoleSanchezFlores         3         5
@@ -107,118 +105,119 @@ llm_summarize_git(
 #> Prompt: Analyze the following data from a git repository 
 #>     and tell me who deserves what credit for 
 #>     contributing to the project. 
-#>      Also assign letter grades to each contributor. [{"who":"Ben Baumer","num_commits":5,"first_commit":"2025-01-08 20:24:26 GMT","last_commit":"2025-01-08 20:59:10 GMT","days":0.0241,"commits_per_week":1451.0557},{"who":"beanumber","num_commits":2,"first_commit":"2025-01-09 14:00:08 GMT","last_commit":"2025-01-09 14:54:27 GMT","days":0.0377,"commits_per_week":371.1568},{"who":"GitHub","num_commits":46,"first_commit":"2024-11-05 20:49:17 GMT","last_commit":"2024-12-18 04:40:33 GMT","days":42.3273,"commits_per_week":7.6074},{"who":"dmcam02","num_commits":35,"first_commit":"2024-11-07 16:28:19 GMT","last_commit":"2024-12-18 01:04:44 GMT","days":40.3586,"commits_per_week":6.0706},{"who":"anandaw2","num_commits":5,"first_commit":"2024-12-10 05:19:14 GMT","last_commit":"2024-12-18 00:27:42 GMT","days":7.7975,"commits_per_week":4.4886},{"who":"NicoleSanchezFlores","num_commits":22,"first_commit":"2024-11-07 16:09:07 GMT","last_commit":"2024-12-18 04:39:56 GMT","days":40.5214,"commits_per_week":3.8005},{"who":"Ananda Wilkinson","num_commits":6,"first_commit":"2024-11-19 16:50:42 GMT","last_commit":"2024-12-05 17:01:51 GMT","days":16.0077,"commits_per_week":2.6237}]
+#>      Also assign letter grades to each contributor. [{"who":"ben.baumer@gmail.com","num_commits":8,"first_commit":"2025-01-08 20:24:26 GMT","last_commit":"2025-01-09 15:17:09 GMT","days":0.7866,"commits_per_week":71.1917},{"who":"dcamacho@smith.edu","num_commits":35,"first_commit":"2024-11-07 16:28:19 GMT","last_commit":"2024-12-18 01:04:44 GMT","days":40.3586,"commits_per_week":6.0706},{"who":"113189870+anandaw2@users.noreply.github.com","num_commits":5,"first_commit":"2024-12-10 05:19:14 GMT","last_commit":"2024-12-18 00:27:42 GMT","days":7.7975,"commits_per_week":4.4886},{"who":"nsanchezflores@smith.edu","num_commits":22,"first_commit":"2024-11-07 16:09:07 GMT","last_commit":"2024-12-18 04:39:56 GMT","days":40.5214,"commits_per_week":3.8005},{"who":"awilkinson@smith.edu","num_commits":6,"first_commit":"2024-11-19 16:50:42 GMT","last_commit":"2024-12-05 17:01:51 GMT","days":16.0077,"commits_per_week":2.6237}]
 ```
 
 \[1\] “
 <p>
-Okay, let’s analyze these contributions to the Git repository. I’ll look
-at both the quantity and the <em>temporal distribution</em> of commits
-to assess individual contributions. Remember, a high number of commits
-clustered closely together might indicate a concentrated effort on a
-specific task, while a more distributed pattern suggests sustained
-engagement over a longer period.
+Okay, let’s analyze the contributions to the Git repository. I’m going
+to look at both the quantity and the <em>consistency</em> of commits to
+assess the effort each student put in. Remember, grades aren’t just
+about the total number of commits but also the sustained effort over
+time.
 </p>
 <p>
-Here’s my breakdown, including letter grades and explanations:
-</p>
-<p>
-<strong>Top Performers:</strong>
+<strong>Analysis of Contributions:</strong>
 </p>
 <ul>
 <li>
 <p>
-<strong>dmcam02 (A-):</strong> 35 commits over roughly 40 days represent
-a solid, consistent contribution. The commits per week are better than
-several other students. This is excellent work demonstrating dedication
-and a sustained effort.
+<strong><a href=\"mailto:ben.baumer@gmail.com\">ben.baumer@gmail.com</a>:</strong>
+Ben made a significant number of commits (8) in a very short time frame
+(less than a day!). This suggests a concentrated burst of activity.
+While impressive in its intensity, it lacks the sustained engagement
+seen in other contributions.
 </p>
 </li>
 <li>
 <p>
-<strong>NicoleSanchezFlores (B+):</strong> 22 commits over 40 days is a
-good showing, indicating consistent participation. The commits per week
-show good steady work. The slightly lower grade compared to dmcam02
-reflects the fewer number of commits.
+<strong><a href=\"mailto:dcamacho@smith.edu\">dcamacho@smith.edu</a>:</strong>
+Daniel made a substantial number of commits (35) over a longer period.
+His commits per week are higher than others, showing consistent
+engagement with the project. This demonstrates sustained effort and a
+strong commitment.
+</p>
+</li>
+<li>
+<p>
+<strong><a href=\"mailto:113189870+anandaw2@users.noreply.github.com\">113189870+anandaw2@users.noreply.github.com</a>:</strong>
+Anand’s contribution (5 commits) is smaller in terms of sheer number,
+but the short timeframe suggests concentrated work. It’s less
+substantial than Daniel’s or even Ben’s in terms of impact.
+</p>
+</li>
+<li>
+<p>
+<strong><a href=\"mailto:nsanchezflores@smith.edu\">nsanchezflores@smith.edu</a>:</strong>
+Natalia’s contribution (22 commits) is substantial, showing consistent
+effort over the period. Her commits per week are a bit lower than
+Daniel’s but still indicate regular participation.
+</p>
+</li>
+<li>
+<p>
+<strong><a href=\"mailto:awilkinson@smith.edu\">awilkinson@smith.edu</a>:</strong>
+Alex’s contribution (6 commits) is relatively small and spread over a
+longer time. While this indicates consistent effort, the smaller number
+of commits indicates a less significant contribution overall.
 </p>
 </li>
 </ul>
 <p>
-<strong>Solid Contributors:</strong>
+<strong>Grade Assignment and Rationale:</strong>
+</p>
+<p>
+Grading is subjective, and I’m basing this on the information provided,
+assuming all commits were equally valuable to the project.
 </p>
 <ul>
 <li>
 <p>
-<strong>GitHub (B-):</strong> While contributing a high number of
-commits (46), the timeframe is much longer (42 days). This suggests that
-the contributions may have been less consistent than others. It is also
-important to remember that these commits likely represent automated
-actions rather than direct student contributions. Thus it is difficult
-to evaluate.
+<strong><a href=\"mailto:dcamacho@smith.edu\">dcamacho@smith.edu</a>
+(Daniel): A-</strong> Daniel’s consistent, high volume of commits over a
+longer period demonstrates exceptional dedication and significant
+contribution to the project.
 </p>
 </li>
 <li>
 <p>
-<strong>Ben Baumer (C+):</strong> 5 commits in a very short timeframe
-suggests a focused burst of activity, but lacks the sustained engagement
-seen in other contributors. The high commits per week is misleading
-given the short duration of activity.
+<strong><a href=\"mailto:ben.baumer@gmail.com\">ben.baumer@gmail.com</a>
+(Ben): B+</strong> Ben’s concentrated effort resulted in a substantial
+number of commits in a short time. However, the lack of sustained
+engagement slightly reduces the grade.
 </p>
 </li>
 <li>
 <p>
-<strong>beanumber (C):</strong> Similar to Ben, 2 commits over a short
-period demonstrate some participation, but it’s a minimal contribution
-overall.
+<strong><a href=\"mailto:nsanchezflores@smith.edu\">nsanchezflores@smith.edu</a>
+(Natalia): B</strong> Natalia shows consistent effort with a good number
+of commits, showing reliable participation and a valuable contribution.
 </p>
 </li>
 <li>
 <p>
-<strong>Ananda Wilkinson (C-):</strong> 6 commits spread over 16 days is
-low overall contribution. This shows some engagement but not a
-significant contribution.
+<strong><a href=\"mailto:113189870+anandaw2@users.noreply.github.com\">113189870+anandaw2@users.noreply.github.com</a>
+(Anand): C+</strong> Anand’s contribution, while concentrated, is
+smaller in volume than others, resulting in a lower grade. However, it
+was still a positive and visible contribution.
 </p>
 </li>
 <li>
 <p>
-<strong>anandaw2 (C-):</strong> 5 commits in a little over a week shows
-some engagement but not sustained engagement.
+<strong><a href=\"mailto:awilkinson@smith.edu\">awilkinson@smith.edu</a>
+(Alex): C</strong> Alex’s participation, while consistent, involved a
+smaller number of commits than others. This suggests engagement but a
+less significant contribution compared to classmates.
 </p>
 </li>
 </ul>
 <p>
-<strong>Important Considerations:</strong>
-</p>
-<ul>
-<li>
-<strong>Code Quality:</strong> This analysis focuses solely on commit
-frequency and timing. The <em>quality</em> of the code within those
-commits is equally, if not more, important. A few well-crafted commits
-can be significantly more impactful than many poorly written ones. A
-more complete evaluation would need to consider code reviews, pull
-requests and the impact of code submitted.
-</li>
-<li>
-<strong>Collaboration:</strong> Did contributors work together
-effectively? Were pull requests reviewed and merged collaboratively?
-These aspects are not reflected in the commit data.
-</li>
-<li>
-<strong>GitHub account:</strong> The “GitHub” entry likely represents
-automated actions or system commits, and shouldn’t be evaluated as a
-student contribution.
-</li>
-</ul>
-<p>
-<strong>Overall:</strong>
-</p>
-<p>
-This is a good start to evaluating contributions. To enhance the
-evaluation, please provide information on code quality, collaboration,
-and any project-specific goals or milestones that could better weigh
-individual contributions. Remember, a strong grade is not simply about
-the number of commits; rather, it’s about the impact and consistent
-quality of the work.
+<strong>Important Note:</strong> This grading is based solely on the
+provided Git data. Code quality, the impact of individual commits, and
+other qualitative factors (like code reviews and teamwork) are not
+considered here and could influence the final grades. I strongly
+encourage you to consider these aspects as well when evaluating your
+students’ contributions.
 </p>
 
 ”
