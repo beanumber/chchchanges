@@ -55,6 +55,15 @@ tbl_blame(path = "README.md")
 summarize_blame(path = "README.md")
 ```
 
+
+### LLM
+
+```{r llm, results='asis'}
+llm_summarize_git() |>
+  markdown::mark()
+```
+
+
 ## Developers
 
 - [Nicole Sanchez Flores](https://github.com/NicoleSanchezFlores)
