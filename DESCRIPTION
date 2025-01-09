@@ -1,6 +1,6 @@
 Package: chchchanges
 Title: chchchanges
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: c(
     person("Nicole", "Sanchez Flores", , "nsanchezflores@smith.edu", role = c("aut","cre"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
@@ -15,7 +15,9 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports:
+    dplyr,
     git2r,
+    lubridate,
     purrr,
     tibble
 Suggests: 

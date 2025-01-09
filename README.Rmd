@@ -39,40 +39,20 @@ There are different functions that can be called depending on the users needs
 
 Count the amount of commits from each user
 
-```{r}
+```{r, message=FALSE}
+library(tidyverse)
 library(chchchanges)
-authors_commit(file_name = "README.md")
+tbl_commits()
+summarize_commits()
 ```
 
 ### Example 2
 
-List the hunks within the repository
+Summarize the hunks within the repository
 
 ```{r}
-hunks(file_name = "README.md")
-```
-
-### Example 3
-
-Retrieves the authors GitHub username along with commit id in order from most last to recent
-
-```{r, error=TRUE}
-get_all_commit_shas()
-```
-
-### Example 4
-
-Extracts the names from each hunk
-
-```{r, error=TRUE}
-extract_name("README.md")
-```
-
-### Example 4
-
-Summary of the information above
-```{r, error=TRUE}
-create_summary_table("README.md")
+tbl_blame(path = "README.md")
+summarize_blame(path = "README.md")
 ```
 
 ## Developers
