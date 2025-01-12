@@ -5,16 +5,15 @@
 #' @param ... arguments passed to [ellmer::chat_gemini()]
 #' @export
 #' @examplesIf FALSE
-#' llm_summarize_git(show_prompts = TRUE)
-#' llm_summarize_git(show_prompts = TRUE, user_prompt = "Respond only in Spanish.")
+#' summarize_git_with_llm(show_prompts = TRUE)
+#' summarize_git_with_llm(show_prompts = TRUE, user_prompt = "Respond only in Spanish.")
 #' 
 #' 
-llm_summarize_git <- function(repo = ".", show_prompts = FALSE, user_prompt = NULL, ...) {
-  teacher_prompt = 
-    "You are a friendly, supportive, college professor 
-    evaluating student contributions to a git repository."
-  
-  chat <- ellmer::chat_gemini(system_prompt = teacher_prompt, ...)
+summarize_git_with_llm <- function(repo = ".", chat = init_chat(), 
+                              show_prompts = FALSE, user_prompt = NULL, ...) {
+  if (!is_chat_ready(chat)) {
+    stop("Chatbot is not ready.")
+  }
   if (show_prompts) {
     message(paste("System prompt:", chat$get_system_prompt()))
   }
@@ -36,3 +35,25 @@ llm_summarize_git <- function(repo = ".", show_prompts = FALSE, user_prompt = NU
   chat$chat(prompt)
 }
 
+#' @rdname summarize_git_with_llm
+#' @export
+#' @examples
+#' init_chat()
+#' 
+init_chat <- function(...) {
+  teacher_prompt = 
+    "You are a friendly, supportive, college professor 
+    evaluating student contributions to a git repository."
+  
+  ellmer::chat_gemini(system_prompt = teacher_prompt, ...)
+}
+
+#' @rdname summarize_git_with_llm
+#' @export
+#' @examples
+#' chat <- init_chat()
+#' is_chat_ready(chat)
+#' 
+is_chat_ready <- function(chat) {
+  inherits(chat, "Chat") 
+}
