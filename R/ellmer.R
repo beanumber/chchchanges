@@ -5,7 +5,7 @@
 #' @param user_prompt Additional text to add to the prompt
 #' @param ... arguments passed to [ellmer::Chat]
 #' @export
-#' @examplesIf FALSE
+#' @examplesIf Sys.getenv("GOOGLE_API_KEY") > ""
 #' summarize_git_with_llm(show_prompts = TRUE)
 #' summarize_git_with_llm(show_prompts = TRUE, user_prompt = "Respond only in Spanish.")
 #' 
