@@ -38,7 +38,7 @@ summarize_git_with_llm <- function(repo = ".", chat = init_chat(),
 
 #' @rdname summarize_git_with_llm
 #' @export
-#' @examples
+#' @examplesIf Sys.getenv("GOOGLE_API_KEY") > ""
 #' init_chat()
 #' 
 init_chat <- function(...) {
@@ -51,7 +51,7 @@ init_chat <- function(...) {
 
 #' @rdname summarize_git_with_llm
 #' @export
-#' @examples
+#' @examplesIf Sys.getenv("GOOGLE_API_KEY") > ""
 #' chat <- init_chat()
 #' is_chat_ready(chat)
 #' 
