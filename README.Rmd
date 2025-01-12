@@ -59,9 +59,9 @@ summarize_blame(path = "README.md")
 ### LLM
 
 ```{r llm, results='asis'}
-llm_summarize_git(
+summarize_git_with_llm(
   show_prompts = TRUE, 
-  user_prompt = "Also assign letter grades to each contributor."
+  user_prompt = "Also assign letter grades to each contributor. Note that GitHub user 'anandaw2' uses the email address 'awilkinson@smith.edu."
 ) |>
   markdown::mark()
 ```

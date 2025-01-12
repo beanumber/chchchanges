@@ -21,11 +21,13 @@ is_chat_ready(chat)
 \arguments{
 \item{repo}{path to git repository}
 
+\item{chat}{An \link[ellmer:Chat]{ellmer::Chat}}
+
 \item{show_prompts}{Output the prompts as messages? Default is \code{FALSE}}
 
 \item{user_prompt}{Additional text to add to the prompt}
 
-\item{...}{arguments passed to \code{\link[ellmer:chat_gemini]{ellmer::chat_gemini()}}}
+\item{...}{arguments passed to \link[ellmer:Chat]{ellmer::Chat}}
 }
 \description{
 Use an LLM to summarize git contributions

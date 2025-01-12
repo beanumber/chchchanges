@@ -1,8 +1,9 @@
 #' Use an LLM to summarize git contributions
 #' @param repo path to git repository
+#' @param chat An [ellmer::Chat]
 #' @param show_prompts Output the prompts as messages? Default is `FALSE`
 #' @param user_prompt Additional text to add to the prompt
-#' @param ... arguments passed to [ellmer::chat_gemini()]
+#' @param ... arguments passed to [ellmer::Chat]
 #' @export
 #' @examplesIf FALSE
 #' summarize_git_with_llm(show_prompts = TRUE)
