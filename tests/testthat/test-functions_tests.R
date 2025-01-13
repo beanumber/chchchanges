@@ -19,6 +19,7 @@ test_that("git-related function works", {
 })
 
 test_that("llm works", {
+  skip_if_not(has_gemini_key())
   chat <- init_chat()
   expect_s3_class(chat, "Chat")
   expect_true(is_chat_ready(chat))

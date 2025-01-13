@@ -5,7 +5,7 @@
 #' @param user_prompt Additional text to add to the prompt
 #' @param ... arguments passed to [ellmer::Chat]
 #' @export
-#' @examplesIf Sys.getenv("GOOGLE_API_KEY") > ""
+#' @examplesIf has_gemini_key() && git2r::in_repository()
 #' summarize_git_with_llm(show_prompts = TRUE)
 #' summarize_git_with_llm(show_prompts = TRUE, user_prompt = "Respond only in Spanish.")
 #' 
@@ -38,7 +38,17 @@ summarize_git_with_llm <- function(repo = ".", chat = init_chat(),
 
 #' @rdname summarize_git_with_llm
 #' @export
-#' @examplesIf Sys.getenv("GOOGLE_API_KEY") > ""
+#' @examples
+#' has_gemini_key()
+#' 
+has_gemini_key <- function() {
+  Sys.getenv("GOOGLE_API_KEY") > ""
+}
+
+
+#' @rdname summarize_git_with_llm
+#' @export
+#' @examplesIf has_gemini_key()
 #' init_chat()
 #' 
 init_chat <- function(...) {
@@ -51,7 +61,7 @@ init_chat <- function(...) {
 
 #' @rdname summarize_git_with_llm
 #' @export
-#' @examplesIf Sys.getenv("GOOGLE_API_KEY") > ""
+#' @examplesIf has_gemini_key()
 #' chat <- init_chat()
 #' is_chat_ready(chat)
 #' 

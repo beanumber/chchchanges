@@ -2,6 +2,7 @@
 % Please edit documentation in R/ellmer.R
 \name{summarize_git_with_llm}
 \alias{summarize_git_with_llm}
+\alias{has_gemini_key}
 \alias{init_chat}
 \alias{is_chat_ready}
 \title{Use an LLM to summarize git contributions}
@@ -13,6 +14,8 @@ summarize_git_with_llm(
   user_prompt = NULL,
   ...
 )
+
+has_gemini_key()
 
 init_chat(...)
 
@@ -33,14 +36,18 @@ is_chat_ready(chat)
 Use an LLM to summarize git contributions
 }
 \examples{
-\dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_gemini_key() && git2r::in_repository()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 summarize_git_with_llm(show_prompts = TRUE)
 summarize_git_with_llm(show_prompts = TRUE, user_prompt = "Respond only in Spanish.")
 
 \dontshow{\}) # examplesIf}
-init_chat()
+has_gemini_key()
 
+\dontshow{if (has_gemini_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+init_chat()
+\dontshow{\}) # examplesIf}
+\dontshow{if (has_gemini_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 chat <- init_chat()
 is_chat_ready(chat)
-
+\dontshow{\}) # examplesIf}
 }
