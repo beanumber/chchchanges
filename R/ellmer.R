@@ -25,7 +25,7 @@ summarize_git_with_llm <- function(repo = ".", chat = init_chat(),
     contributing to the project. 
     ",
     if (!is.null(user_prompt)) user_prompt,
-    summarize_commits() |>
+    summarize_commits(repo) |>
       jsonlite::toJSON()
   )
   
