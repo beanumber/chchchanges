@@ -16,8 +16,8 @@ summarize_commits <- function(...) {
       num_commits = dplyr::n(),
       first_commit = min(when),
       last_commit = max(when),
-      days = lubridate::interval(min(when), max(when)) / lubridate::ddays(1),
-      commits_per_week = dplyr::n() * 7 / days
+      days = round(lubridate::interval(min(when), max(when)) / lubridate::ddays(1), 1),
+      commits_per_week = round(dplyr::n() * 7 / days, 2)
     ) |>
     dplyr::arrange(dplyr::desc(commits_per_week))
 }
