@@ -5,7 +5,7 @@ output:
 
 <!-- badges: start -->
 
-[![chchchanges](https://github.com/beanumber/chchchanges/actions/workflows/git_analysis.yaml/badge.svg)](https://github.com/beanumber/chchchanges/actions/workflows/git_analysis.yaml)
+[![chchchanges](https://github.com/beanumber/chchchanges/actions/workflows/git_analysis.yml/badge.svg)](https://github.com/beanumber/chchchanges/actions/workflows/git_analysis.yml)
 <!-- badges: end -->
 
 ## Repository analysis via `chchchanges`
