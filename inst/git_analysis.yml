@@ -32,6 +32,7 @@ jobs:
           upgrade: 'TRUE'
           packages:
             any::remotes
+            any::markdown
             any::rmarkdown
             any::dplyr
             any::git2r
