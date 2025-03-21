@@ -1,6 +1,6 @@
 Package: chchchanges
 Title: chchchanges
-Version: 0.0.0.9004
+Version: 0.0.0.9005
 Authors@R: c(
     person(given = "Benjamin S.",
            family = "Baumer",
@@ -23,6 +23,7 @@ RoxygenNote: 7.3.2
 Imports:
     dplyr,
     ellmer, 
+    fs,
     git2r,
     jsonlite,
     lubridate,
