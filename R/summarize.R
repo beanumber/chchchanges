@@ -10,7 +10,7 @@
 #' 
 summarize_commits <- function(...) {
   tbl_commits(...) |>
-    dplyr::filter(who != "noreply@github.com") |>
+    dplyr::filter(!grepl("noreply", x = who)) |>
     dplyr::group_by(who) |>
     dplyr::summarize(
       num_commits = dplyr::n(),
